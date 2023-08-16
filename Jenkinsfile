@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'EC2-jdk11' }
+    agent { label 'main' }
     stages {
         stage('Prepare') {
             steps {
