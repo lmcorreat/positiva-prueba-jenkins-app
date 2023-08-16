@@ -25,3 +25,8 @@ open in browser
 ```
 http://localhost:8082/jenkins-test/swagger-ui/index.html
 ```
+
+Service
+```
+http://localhost:8082/jenkins-test/prueba/consultar-texto
+```
