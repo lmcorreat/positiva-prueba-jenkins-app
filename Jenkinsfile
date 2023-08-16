@@ -22,9 +22,6 @@ pipeline {
         }  
     }
     post {
-            always{
-               sh "echo ' Fase que siempre se ejecuta!'"
-            }
             success {
                 sh "echo 'Fase Ok!'"
             }
