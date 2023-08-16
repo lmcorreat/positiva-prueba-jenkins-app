@@ -3,16 +3,24 @@ pipeline {
     stages {
         stage('Prepare') {
             steps {
-                sh 'chmod +x ./mvnw'
+                 sh "echo 'Fase Preparación!'"
             }
         }
         stage('Compile') {
             steps {
-                withMaven(mavenSettingsConfig: 'MavenJenkinsSettings') {
-                    sh './mvnw clean compile'
-                }
+                sh "echo 'Fase Compilación!'"
             }
-        }       
+        } 
+        stage('Test') {
+            steps {
+                sh "echo 'Fase lanzar pruebas!'"
+            }
+        } 
+        stage('Deploy') {
+            steps {
+                sh "echo 'Fase hacer despliegue en el entorno!'"
+            }
+        } 
     }
     post {
             success {
