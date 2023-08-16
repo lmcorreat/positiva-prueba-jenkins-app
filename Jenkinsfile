@@ -19,8 +19,9 @@ pipeline {
                     sh './mvnw verify'
                 }
             }
-        }
-        post {
+        }  
+    }
+    post {
             always{
                 deleteDir()
                  sh "echo ' Fase que siempre se ejecuta!'"
@@ -32,6 +33,4 @@ pipeline {
                 sh "echo 'Fase fallido!'"
             }
         }
-
-    }
 }
