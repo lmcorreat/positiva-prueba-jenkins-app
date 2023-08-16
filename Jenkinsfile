@@ -23,8 +23,7 @@ pipeline {
     }
     post {
             always{
-                deleteDir()
-                 sh "echo ' Fase que siempre se ejecuta!'"
+               sh "echo ' Fase que siempre se ejecuta!'"
             }
             success {
                 sh "echo 'Fase Ok!'"
