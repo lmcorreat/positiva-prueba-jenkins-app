@@ -1,0 +1,50 @@
+management:
+  endpoint:
+    health:
+      show-details: ALWAYS
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+server:
+  port: 8082
+  compression:
+    enabled: true
+    min-response-size: 1024
+    mime-types:
+      - application/json
+  tomcat:
+    connection-timeout: 60000
+    max-threads: 0
+    min-spare-threads: 0
+    uri-encoding: UTF-8
+    remote-ip-header: X-FORWARDED-FOR
+  servlet:
+    context-path: /jenkins-test
+    application-display-name: Proyecto prueba de Jenkins
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: jenkins
+  logging:
+    level:
+      ROOT: INFO
+      org:
+        springframework: INFO
+        com.conexia: INFO
+  datasource:
+    url: jdbc:h2:mem:testdb
+    username: sa
+    password: password
+    driver-class-name: org.h2.Driver
+    hikari:
+      maximum-pool-size: 2
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+
+autoconfigure:
+    exclude:
+      - org.springframework.cloud.aws.autoconfigure.context.ContextInstanceDataAutoConfiguration
+      - org.springframework.cloud.aws.autoconfigure.context.ContextStackAutoConfiguration
+      - org.springframework.cloud.aws.autoconfigure.context.ContextRegionProviderAutoConfiguration
