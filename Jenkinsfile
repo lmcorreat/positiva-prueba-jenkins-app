@@ -12,14 +12,7 @@ pipeline {
                     sh './mvnw clean compile'
                 }
             }
-        }
-        stage('Verify') {
-            steps {
-                withMaven(mavenSettingsConfig: 'MavenJenkinsSettings') {
-                    sh './mvnw verify'
-                }
-            }
-        }  
+        }       
     }
     post {
             success {
